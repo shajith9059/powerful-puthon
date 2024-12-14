@@ -1,1 +1,13 @@
+#import pandas pd
+#create a list for the pizza menu
+data={[pizza:'nonveg'and'veg'
+      pizza id:'1','2']}
+nonveg={['chicken pizza','mutton pizza','kheemachicken pizza'
+        pizza id:'1','2','3']} 
+veg={['paneer pizza','chilli pizza','corn pizza'
+     pizza id:'1','2','3']}
+df=pd.data frame(data)
+print(df)
+
+
 
