@@ -3,15 +3,34 @@
 data={[pizza:'nonveg'and'veg'
       pizza_id:'1','2']}
 nonveg={['chicken pizza','mutton pizza','kheemachicken pizza'
-        pizza_id_nvg:'1','2','3']} 
+        pizza_id_nvg:'1','2','3'
+        base_price:'150','200','250']}
 veg={['paneer pizza','chilli pizza','corn pizza'
-     pizza_id_vg:'1','2','3']}
+     pizza_id_vg:'1','2','3'
+     base_price:'100','150','280']}
 df=pd.data frame(data)
 print(df)
 def place_order():
 print("view the menu:")
 print(pizza_menu)
-pizza_id=int(input("
+pizza_id=int(input("enter pizza id:"))
+pizza_name=pizza_memu.loc[pizza_menu['pizza id']==pizza_id,'pizza name'].values[0]
+base_price=pizza_menu.loc[pizza_menu['pizza id']==pizza_id,'base price'].value[0]
+extra_cheese=input("extra cheese (y/n)?") == 'y'
+extra_toppings=input("extra toppings (y/n)?") == 'y'
+takeaway=input("takeaway (y/n)?") == 'y'
+add_on_cost=0
+if extra_cheese:
+    add_on_cost +=10
+if extra_toppings:
+    add_on_cost +=20
+if takeaway:
+    add_on_cost +=30
+total_price=base_price+add_on_cost
+def print_receipt(pizza_name,base_price,add_on_cost,total_price):
+print("\n--- order receipt ---")
+print(f"pizza name:{pizza_name}")
+
 
 
 
